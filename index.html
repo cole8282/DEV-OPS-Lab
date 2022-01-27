@@ -8,5 +8,30 @@
 </head>
 <body>
 HELLO
+<form>
+<input id="input-field" type="text" placeholder="Insert name here"/>
+<button id="add-btn">Add name</button>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+  const field = document.getElementById("input-field");
+  const btn = document.getElementById("add-btn");
+
+  function handleButton() {
+    if (field.value.length === 0) {
+      alert('Field is Empty');
+    }
+  }
+
+  axios.get('http://127.0.0.1:5501/index.html?/api/emptyButton')
+    .then(res => {
+      handleButton(res)
+            })
+
+
+
+const buttonClicked = btn.addEventListener("click", handleButton);
+
+</script>
 </body>
 </html>

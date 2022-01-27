@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const app = express()
 
-// app.use(express.json())
+app.use(express.json())
 app.use(cors())
 
 // include and initialize the rollbar library with your access token
@@ -27,6 +27,16 @@ app.get("/", function(req, res) {
 // process.env.PORT is HEROKU'S responsibility. They will provide the PORT number on deployment.
 // The second port number is for local development purposes only.
 app.use(rollbar.errorHandler());
+
+//handle empty input field
+isEmpty = 'FIeld is empty';
+
+app.get('/api/emptyButton', (req, res) => {
+  rollbar.info("Field is Empty");
+  res.status(200).send(isEmpty)
+})
+
+
 
 const port = process.env.PORT || 4005;
 
