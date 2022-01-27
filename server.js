@@ -1,15 +1,22 @@
 const express = require('express')
-const app = express()
 const path = require('path')
 const cors = require('cors')
 
-app.use(express.json())
+const app = express()
+
+// app.use(express.json())
 app.use(cors())
 
-// include and initialize the rollbar library with your access token
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
-  accessToken: 'e078f206aac74a109ea472db6e03cf19',
-  captureUncaught: true,
-  captureUnhandledRejections: true,
-})
+// This part is specific to Heroku/more basic hosting options.
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "./index.html"));
+});
+
+
+// process.env.PORT is HEROKU'S responsibility. They will provide the PORT number on deployment.
+// The second port number is for local development purposes only.
+const port = process.env.PORT || 4005;
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}`);
+});
