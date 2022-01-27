@@ -32,7 +32,7 @@ app.use(rollbar.errorHandler());
 isEmpty = 'FIeld is empty';
 
 app.get('/api/emptyButton', (req, res) => {
-  rollbar.info("Field is Empty");
+  rollbar.log("Field is Empty");
   res.status(200).send(isEmpty)
 })
 
