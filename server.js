@@ -29,7 +29,7 @@ app.get("/", function(req, res) {
 app.use(rollbar.errorHandler());
 
 //handle empty input field
-isEmpty = 'FIeld is empty';
+isEmpty = 'It is all empty';
 
 app.get('/api/emptyButton', (req, res) => {
   rollbar.log("Field is Empty");
