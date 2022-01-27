@@ -17,9 +17,9 @@ HELLO
   const field = document.getElementById("input-field");
   const btn = document.getElementById("add-btn");
 
-  function handleButton() {
+  function handleButton(param) {
     if (field.value.length === 0) {
-      alert('Field is Empty');
+      alert(param);
     }
   };
 
