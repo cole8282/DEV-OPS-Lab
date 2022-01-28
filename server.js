@@ -28,12 +28,39 @@ app.get("/", function(req, res) {
 // The second port number is for local development purposes only.
 app.use(rollbar.errorHandler());
 
-//handle empty input field
-isEmpty = 'It is all empty';
+//handle each button
 
-app.get('/api/emptyButton', (req, res) => {
-  rollbar.log("Field is Empty");
-  res.status(200).send(isEmpty)
+app.get('/api/addName', (req, res) => {
+  .then(function(res) {
+    nonExistentFunction();
+  })
+  .catch(function(error) {
+    rollbar.error('Add Name Failed');
+    console.log('erioireooier')
+  })
+  res.sendStatus(400);
+})
+
+app.get('/api/minusName', (req, res) => {
+  .then(function(res) {
+    nonExistentFunction();
+  })
+  .catch(function(error) {
+    rollbar.error('Minus Name Failed');
+    console.log('erioireooier')
+  })
+  res.sendStatus(400);
+})
+
+app.get('/api/divideName', (req, res) => {
+  .then(function(res) {
+    nonExistentFunction();
+  })
+  .catch(function(error) {
+    rollbar.error('Divide Name Failed');
+    console.log('erioireooier')
+  })
+  res.sendStatus(400);
 })
 
 

@@ -9,28 +9,44 @@
 <body>
 HELLO
 <form>
-<input id="input-field" type="text" placeholder="Insert name here"/>
 <button id="add-btn">Add name</button>
+<button id="minus-btn">Minus name</button>
+<button id="divide-btn">Divide names</button>
 </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script>
-  const field = document.getElementById("input-field");
-  const btn = document.getElementById("add-btn");
-
-  function handleButton() {
-    if (field.value.length === 0) {
-      alert('Field is Empty');
-    }
-  }
-
-  axios.get('/api/emptyButton')
-    .then(res => {
-      handleButton(res)
-            })
+  const addBtn = document.getElementById("add-btn");
+  const minusBtn = document.getElementById("minus-btn");
+  const divideBtn = document.getElementById("divide-btn");
 
 
+function addNameHandler(e) {
+  e.preventDefault();
+  axios.get('/api/addName')
+   .then(function(res) {
 
-const buttonClicked = btn.addEventListener("click", handleButton);
+   })
+  };
+
+function minusNameHandler(e) {
+  e.preventDefault();
+   axios.get('/api/minusName')
+   .then(function(res) {
+
+   })
+  };
+
+function divideNameHandler(e) {
+  e.preventDefault();
+   axios.get('/api/divideName')
+   .then(function(res) {
+  })
+}
+
+
+addBtn.addEventListener("click", addNameHandler);
+minusBtn.addEventListener("click", addNameHandler);
+divideBtn.addEventListener("click", addNameHandler);
 
 </script>
 </body>
