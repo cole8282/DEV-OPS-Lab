@@ -17,11 +17,11 @@ HELLO
   const field = document.getElementById("input-field");
   const btn = document.getElementById("add-btn");
 
-  function handleButton(param) {
+  function handleButton() {
     if (field.value.length === 0) {
-      alert(param);
+      alert('Field is Empty');
     }
-  };
+  }
 
   axios.get('/api/emptyButton')
     .then(res => {
