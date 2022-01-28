@@ -30,35 +30,35 @@ app.use(rollbar.errorHandler());
 //handle each button
 
 app.get('/api/addName', (req, res) => {
-  .then(function(res) {
+  try {
     nonExistentFunction();
-  })
-  .catch(function(error) {
+  }
+  catch {
     rollbar.error('Add Name Failed');
     console.log('erioireooier')
-  })
+  }
   res.sendStatus(400);
 })
 
 app.get('/api/minusName', (req, res) => {
-  .then(function(res) {
+  try {
     nonExistentFunction();
-  })
-  .catch(function(error) {
+  }
+  catch {
     rollbar.error('Minus Name Failed');
     console.log('erioireooier')
-  })
+  }
   res.sendStatus(400);
 })
 
 app.get('/api/divideName', (req, res) => {
-  .then(function(res) {
+  try {
     nonExistentFunction();
-  })
-  .catch(function(error) {
+  }
+  catch {
     rollbar.error('Divide Name Failed');
     console.log('erioireooier')
-  })
+  }
   res.sendStatus(400);
 })
 
