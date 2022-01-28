@@ -24,7 +24,6 @@ app.get("/", function(req, res) {
 });
 
 
-// process.env.PORT is HEROKU'S responsibility. They will provide the PORT number on deployment.
 // The second port number is for local development purposes only.
 app.use(rollbar.errorHandler());
 
@@ -64,7 +63,7 @@ app.get('/api/divideName', (req, res) => {
 })
 
 
-
+// process.env.PORT is HEROKU'S responsibility. They will provide the PORT number on deployment.
 const port = process.env.PORT || 4005;
 
 app.listen(port, () => {

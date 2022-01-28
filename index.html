@@ -24,7 +24,7 @@ function addNameHandler(e) {
   e.preventDefault();
   axios.get('/api/addName')
    .then(function(res) {
-
+      console.log(res);
    })
   };
 
@@ -32,7 +32,7 @@ function minusNameHandler(e) {
   e.preventDefault();
    axios.get('/api/minusName')
    .then(function(res) {
-
+     console.log(res);
    })
   };
 
@@ -40,6 +40,7 @@ function divideNameHandler(e) {
   e.preventDefault();
    axios.get('/api/divideName')
    .then(function(res) {
+    console.log(res);
   })
 }
 
